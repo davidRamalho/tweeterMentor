@@ -15,6 +15,9 @@ html {
  */
 
 body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -31,3 +34,128 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.container {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+}
+
+#tweets-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.tweet {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  border:  #413e38;
+  border-style: solid;
+  border-width: thick;
+}
+
+.tweet-header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.tweet-header > span {
+  margin-top: 0.5em;
+  margin-right: 1em;
+  margin-left: 1em;
+  font-family: 'Source Sans Pro', sans-serif; 
+}
+
+.tweet-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98%;
+  border-style: solid;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-width: thick;
+} 
+
+.tweet-section > div {
+  padding-top: 1.5em;
+  padding-bottom: 0.5em;
+  padding-left: 2em;
+  width: 100%;
+  font-weight: 500;
+}
+
+.tweet-footer {
+  width: 98%;
+  height: 50px;
+  display: flex;
+  padding-left: 30px;
+  padding-right: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#handle {
+  display: none;
+}
+
+#user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#user > img {
+  padding-right: 0.5em;
+}
+
+article:hover #user > img {
+  color: #2f4fb9;
+  height: 2em;
+}
+
+article:hover #handle {
+  display: block;
+  color: #4056a1;
+}
+
+article:hover {
+  box-shadow: 10px 10px 10px #4056a1;
+}
+
+article:hover .tweet-footer, 
+article:hover #text,
+article:hover .tweet-section,
+article:hover .tweet-header, 
+article:hover span > img {
+  font-weight: 600;
+}
+
+article:hover .fa-xs {
+  font-size: 1em;
+  color: #2f4fb9;
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 1em;
+  color: red;
+  font-weight: 600;
+  border: red;
+  border-style: solid;
+  border-width: thick;
+  box-shadow: 5px 5px 10px darkred;
+}

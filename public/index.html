@@ -8,17 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
-
+    <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+/>
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -27,7 +34,7 @@
       <span>tweeter</span>
     </nav>
 
-    <header>
+    <header class="header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -41,7 +48,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form>
+        <form method="POST" action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
@@ -49,6 +56,23 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <section id="tweets-container">
+        <article class="tweet">
+          <header class="tweet-header">
+            <span id="user"><img src=${tweet.user.avatars}>${escape(tweet.user.name)}</span>
+            <span id="handle">User Handle</span>
+          </header>
+          <section class="tweet-section">
+            <div id="text">A BUNCH OF TEXT! YAY!!!</div>
+          </section>
+          <footer class="tweet-footer">
+            <div>2 days ago</div>
+            <div class="icons"><i class="fas fa-flag fa-xs"></i>
+              <i class="far fa-retweet fa-xs"></i>
+              <i class="far fa-heart fa-xs"></i></div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
